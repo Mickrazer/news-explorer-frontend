@@ -1,0 +1,28 @@
+@import url(./footer__icon.css);
+@import url(./footer__link.css);
+@import url(./footer__social.css);
+@import url(./footer__year.css);
+@import url(./footer__info.css);
+@import url(./footer__links.css);
+
+.footer {
+	max-width: 100vw;
+	height: 80px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+    .footer {
+    	height: 64px;
+    }
+}
+
+@media (max-width:600px) {
+    .footer {
+    	flex-direction: column-reverse;
+    	height: 170px;
+    }
+}

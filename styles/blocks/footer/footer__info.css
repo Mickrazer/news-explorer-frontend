@@ -1,0 +1,10 @@
+.footer__info {
+	display: flex;
+}
+
+@media (max-width: 600px) {
+    .footer__info {
+		margin-top: 20px;
+    }
+
+}

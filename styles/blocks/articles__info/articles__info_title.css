@@ -1,0 +1,28 @@
+.articles__info_title {
+	max-width: 530px;
+	font-family: Roboto Slab;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 46px;
+	color: #1A1B22;
+	margin: 0 0 30px 104px;
+}
+
+@media (min-width: 766px) and (max-width: 1023px) {
+  	.articles__info_title {
+  		max-width: 336px;
+		margin: 0 0 16px 40px;
+		font-size: 30px;
+		line-height: 34px;
+	}
+}
+
+@media (max-width:600px) {
+  	.articles__info_title {
+  		max-width: 288px;
+		margin: 0 0 16px 16px;
+		font-size: 30px;
+		line-height: 34px;
+	}
+}
