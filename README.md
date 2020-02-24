@@ -3,6 +3,7 @@
 **Версия**: 0.1
 
 Страница после сборки: 
+**https://mickrazer.github.io/news-explorer-frontend/**
 
 **Виды сборок в проекте:**
 **build**, **dev**, **deploy**.
