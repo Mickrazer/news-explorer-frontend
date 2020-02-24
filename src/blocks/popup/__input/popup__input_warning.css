@@ -1,0 +1,20 @@
+.error-message {
+  color: #FF3333;
+  font-size: 0.8em;
+  transition: .3s;
+  padding: 0px;
+  opacity: 0;
+}
+
+
+.input-container__invalid .error-message {
+
+  opacity: 1;
+
+}
+
+.error__user-have {
+	position: absolute;
+	bottom: 136px;
+	left: 115px;
+}

@@ -1,0 +1,12 @@
+.results__card_class {
+	font-size: 14px;
+	line-height: 3em;
+	position: absolute;
+	left: 24px;
+}
+
+@media (min-width: 766px) and (max-width: 1023px) {
+  	.results__card_class {
+		left: 8px;
+	}
+}

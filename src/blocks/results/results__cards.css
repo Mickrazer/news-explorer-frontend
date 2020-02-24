@@ -1,0 +1,24 @@
+.results__cards {
+	padding: 64px 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill,400px);
+    grid-gap: 16px;
+    justify-content: center;
+   	border-radius: 16px;
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+	.results__cards {
+		grid-template-columns: repeat(auto-fill,224px);
+		grid-gap: 8px;
+		padding: 32px 0;
+	}
+}
+
+@media (max-width:600px) {
+	.results__cards {
+		grid-template-columns: repeat(auto-fill,288px);
+		grid-gap: 10px;
+		padding: 24px 0;
+	}
+}	

@@ -5,11 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>NewsExplorer</title>
-	<link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="icon" href="styles/images/newsexplorericon.png" type="image/x-icon">
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <link rel="icon" href="<%=require('../../images/newsexplorericon.png')%>" type="image/x-icon">
 </head>
 <body>
 	<div class="page page__white">
@@ -20,7 +17,7 @@
 				<a href="#" class='header__menu_info black'>Главная</a>
 				<a href="#" class="header__menu_info header__menu_active_black black">Сохраненные статьи</a>
 				<button class='header__menu_info header__menu_border_black black'>Грета
-					<img src="styles/images/logout.png" alt="logout" class="header__menu_logout">
+					<img src="../<%=require('../../images/logout.png')%>" alt="logout" class="header__menu_logout">
 				</button>	
 			</div>			
 		</header>
@@ -112,11 +109,11 @@
 				<a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
 			</div>
 			<div class="footer__social">
-				<img src="styles/images/git.svg" alt="github" class="footer__icon">
-				<img src="styles/images/Vector.svg" alt="facebook" class="footer__icon">
+				<img src="../<%=require('../../images/git.svg')%>" alt="github" class="footer__icon">
+				<img src="../<%=require('../../images/facebook.svg')%>" alt="facebook" class="footer__icon">
 			</div>
 		</div>
 	</footer>
-	<script src="./script.js"></script> 		
+	<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script> 		
 </body>
 </html>

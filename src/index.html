@@ -4,10 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>MKRZR</title>
-	<link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="styles/images/newsexplorericon.png" type="image/x-icon">
+	<title>NewsExplorer</title>
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <link rel="icon" href="<%=require('./images/newsexplorericon.png')%>" type="image/x-icon">
 </head>
 <body>
 	<div class="page">
@@ -77,7 +76,7 @@
 	            <p class="results__preloader_text">Идет поиск новостей...</p>			
 			</div>
 			<div class="results__notfound">
-				<img src="styles/images/results__notfind_image.png" alt="NotFind" class="results__notfound_image">
+				<img src="<%=require('./images/results__notfind_image.png')%>" alt="NotFind" class="results__notfound_image">
 				<p class="results__notfound_title">Ничего не найдено</p>
 	            <p class="results__notfound_subtitle">К сожалению по вашему запросу ничего не найдено.</p>
 			</div>
@@ -99,14 +98,14 @@
 				<a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
 			</div>
 			<div class="footer__social">
-				<a href="https://github.com" class="footer__icon"><img src="styles/images/git.svg" alt="github"></a>
-				<a href="https://facebook.com" class="footer__icon"><img src="styles/images/facebook.svg" alt="facebook"></a>
+				<a href="https://github.com" class="footer__icon"><img src="<%=require('./images/git.svg')%>" alt="github"></a>
+				<a href="https://facebook.com" class="footer__icon"><img src="<%=require('./images/facebook.svg')%>" alt="facebook"></a>
 			</div>
 		</div>
 	</footer>
 	<div class="popup">
       <div class="popup__content">
-        <img src="styles/images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form input-container__invalid" name="new">
         	<h4 class="popup__subtitle">Email</h4>
@@ -122,7 +121,7 @@
     </div>
     <div class="popup">
       <div class="popup__content">
-        <img src="styles/images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="new">
         	<h4 class="popup__subtitle">Email</h4>
@@ -138,7 +137,7 @@
     </div>
     <div class="popup">
       <div class="popup__content">
-        <img src="styles/images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="new">
         	<h4 class="popup__subtitle">Email</h4>
@@ -154,7 +153,7 @@
 	</div>
     <div class="popup">
       <div class="popup__content">
-        <img src="styles/images/close.svg" alt="" class="popup__close">button
+        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">button
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="new">
         	<h4 class="popup__subtitle">Email</h4>
@@ -173,7 +172,7 @@
     </div>
     <div class="popup">
       <div class="popup__content">
-        <img src="styles/images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form input-container__invalid" name="new">
         	<h4 class="popup__subtitle">Email</h4>
@@ -190,13 +189,13 @@
     </div>
     <div class="popup">
       <div class="popup__content">
-        <img src="styles/images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
         <h3 class="popup__title">Пользаватель успешно зарегистирован!</h3>
         <form class="popup__form" name="new">
             <button class="popup__footer_signin">Выполнить вход</button>
         </form>
       </div>
     </div>
-	<script src="./script.js"></script>    
+	<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>    
 </body>
 </html>

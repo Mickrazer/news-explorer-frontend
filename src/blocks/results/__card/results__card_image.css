@@ -1,0 +1,22 @@
+.results__card_image {
+	height: 272px;
+	background-image: url(../../../images/image_08.png);
+	display: flex;
+	justify-content: flex-end;
+	border-radius: 10px 10px 0 0;
+	position: relative;
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+	.results__card_image {
+		height: 150px;
+		background-size: cover;
+	}
+}
+
+@media (max-width:600px) {
+	.results__card_image {
+		height: 196px;
+		background-size: cover;
+	}
+}

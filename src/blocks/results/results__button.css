@@ -1,0 +1,33 @@
+.results__button {
+	display: inline-block;
+  	font-family: 'Roboto', sans-serif;
+  	font-weight: 500;
+  	font-size: 18px;
+  	line-height: 64px;
+  	color: #1A1B22;
+  	padding:0 84px;
+  	background-color: white;
+  	border-radius: 32px;
+  	text-decoration: none;
+  	border: none;
+  	margin: 0 auto 80px;
+  	align-self: center;
+}
+
+.results__button:hover {
+  cursor: pointer;
+  background-color: #E8E8E9;
+  opacity: 0.9;
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+    .results__button {
+        margin: 0 auto 40px;
+    }
+}
+
+@media (max-width:600px) {
+  .results {
+  max-width:600px
+  }
+}
