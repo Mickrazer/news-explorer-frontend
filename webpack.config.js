@@ -1,15 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: { 
+  entry: {
     main: './src/index.js',
-    secondary:'./src/pages/secondary/index.js' 
+    secondary:'./src/pages/secondary/index.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -27,8 +27,8 @@ module.exports = {
       {
         test: /\.css$/i,
 		use: [
-         (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-         'css-loader', 
+         (isDev ? { loader: 'style-loader' } : { loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' } }),
+         'css-loader',
          'postcss-loader'
 		]
       },
@@ -46,12 +46,12 @@ module.exports = {
 			}
 		]
 	}
-	  
-	  
+
+
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({ // 
+    new MiniCssExtractPlugin({ //
       filename: '[name]/[name].[contenthash].css',
     }),
 	new OptimizeCssAssetsPlugin({
@@ -75,6 +75,6 @@ module.exports = {
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
     'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-  })  
+  })
   ]
 };
