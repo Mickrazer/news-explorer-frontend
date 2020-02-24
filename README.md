@@ -5,6 +5,7 @@
 Страница после сборки:
 
 **1. https://mickrazer.github.io/news-explorer-frontend/**
+
 **2. https://mickrazer.github.io/news-explorer-frontend/secondary**
 
 **Виды сборок в проекте:**
