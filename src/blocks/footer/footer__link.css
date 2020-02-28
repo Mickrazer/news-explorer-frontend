@@ -1,11 +1,11 @@
 .footer__link {
 	max-width: 176px;
  	text-align: center;
- 	font-family: 'Roboto';
-    font-size: 18px;
-    color: #1A1B22;
-    display: inline-block;
-    text-decoration: none;
+ 	font-family: Roboto, sans-serif;
+  font-size: 18px;
+  color: #1A1B22;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .footer__link_yandex {
@@ -14,18 +14,18 @@
 }
 
 @media (min-width: 600px) and (max-width: 1279px) {
-    .footer__link_yandex {
-    	margin-right: 25px;
-    }
+  .footer__link_yandex {
+  	margin-right: 25px;
+  }
 }
 
-@media (max-width:600px) {
-    .footer__link_yandex {
-    	margin-right: 0;
-    	margin-top: 20px;
-    }
+@media (max-width:720px) {
+  .footer__link_yandex {
+  	margin-right: 0;
+  	margin-top: 20px;
+  }
 
-    .footer__link {
-    	text-align: start;
-    }
+  .footer__link {
+  	text-align: start;
+  }
 }

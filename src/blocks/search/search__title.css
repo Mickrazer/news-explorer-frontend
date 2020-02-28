@@ -11,22 +11,22 @@
 
 
 @media (min-width: 766px) and (max-width: 1023px) {
-  	.search__title {
-  		max-width: 385px;
-  		margin-top: 38px;
+  .search__title {
+  	max-width: 385px;
+  	margin-top: 38px;
 		margin-bottom: 16px;
 		font-size: 36px;
 		line-height: 40px;
 	}
 }
 
-@media (max-width:600px) {
-  	.search__title {
+@media (max-width:620px) {
+  .search__title {
 		max-width: 285px;
-  		margin-top: 30px;
+  	margin-top: 30px;
 		margin-bottom: 16px;
 		margin-left: 16px;
 		font-size: 36px;
 		line-height: 40px;
-  	}
+  }
 }

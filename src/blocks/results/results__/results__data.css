@@ -1,0 +1,21 @@
+.results__data {
+	font-family: Source Sans Pro, serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 24px;
+	padding: 20px 0 12px 24px;
+	color: #B6BCBF;
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+	.results__data {
+		padding: 16px 0 12px 16px;
+	}
+}
+
+@media (max-width:600px) {
+	.results__data {
+		padding: 16px 0 10px 16px;
+	}
+}

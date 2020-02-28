@@ -1,0 +1,10 @@
+@import url(./preloader__text.css);
+@import url(./preloader__animation.css);
+
+.preloader {
+	height: 282px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

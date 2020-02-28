@@ -1,0 +1,8 @@
+@import url(./articles__title.css);
+@import url(./articles__subtitle.css);
+@import url(./articles__save.css);
+
+.articles__info {
+	margin: 0 auto;
+}
+

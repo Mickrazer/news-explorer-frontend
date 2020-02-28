@@ -1,0 +1,26 @@
+.results__article-name {
+	max-width: 352px;
+	margin: 0 auto 16px;
+	font-family: Roboto Slab, serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 26px;
+	line-height: 30px;
+	color: #1A1B22;
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+  	.results__article-name {
+		max-width: 192px;
+		font-size: 22px;
+		line-height: 24px;
+ 	}
+}
+
+@media (max-width:600px) {
+  	.results__article-name {
+		max-width: 256px;
+		font-size: 22px;
+		line-height: 28px;
+ 	}
+ }

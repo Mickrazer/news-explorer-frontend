@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mickrazer/webpack.git"
+    "url": "git+https://github.com/Mickrazer/news-explorer-frontend.git"
   },
   "author": "Mikhail Evdokimov",
   "license": "ISC",

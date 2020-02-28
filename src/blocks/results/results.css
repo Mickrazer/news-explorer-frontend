@@ -3,9 +3,9 @@
 @import url(./results__cards.css);
 @import url(./results__find.css);
 @import url(./results__title.css);
-@import url(./__preloader/results__preloader.css);
-@import url(./__notfound/results__notfound.css);
-@import url(./__card/results__card.css);
+@import url(./preloader/preloader.css);
+@import url(./notfound/notfound.css);
+@import url(./results__/results__card.css);
 
 .results {
 	max-width: 100vw;

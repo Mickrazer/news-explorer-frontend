@@ -1,9 +1,9 @@
-@import url(./search__block_button.css);
-@import url(./search__block_input.css);
+@import url(./search__button.css);
+@import url(./search__input.css);
 
 .search__block {
 	width: 608px;
-	margin-top: 64px;
+	margin: 64px auto;
 	display: flex;
 	position: relative;
 	overflow: hidden;
@@ -16,7 +16,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
     .search__block {
     	margin: 122px auto 0;
     	max-width: 288px;

@@ -21,13 +21,13 @@
 }
 
 @media (min-width: 600px) and (max-width: 1279px) {
-    .results__button {
-        margin: 0 auto 40px;
-    }
+  .results__button {
+    margin: 0 auto 40px;
+  }
 }
 
 @media (max-width:600px) {
   .results {
-  max-width:600px
+    max-width:600px
   }
 }
