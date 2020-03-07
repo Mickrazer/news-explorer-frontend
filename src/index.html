@@ -15,67 +15,33 @@
 			<button class="header__burger-button"></button>
 			<div class="header__menu">
 				<a href="../" class='header__info header__active'>Главная</a>
+        <a href="/secondary" class="header__info disabled" id = "saveArticles">Сохраненные статьи</a>
 				<button class='header__info border'>Авторизоваться</button>
+        <button class='header__info border' id="logoutButton"></button>
 			</div>
 		</header>
 		<section class="search">
 			<h2 class="search__title">Что в мире творится?</h2>
 			<h3 class="search__subtitle">Находите самые сваежие статьи на любую тему и сохраняйте в своем личном кабинете.</h3>
-			<div class="search__block">
-				<input required minlength="2"  type="search" class="search__input" placeholder="Введите тему новости">
+			<form class="search__block" name="searchForm">
+				<input required minlength="2"  name = "keyWord" type="search" class="search__input" placeholder="Введите тему новости">
 				<button class="search__button" type="submit">Искать</button>
-			</div>
+			</form>
 		</section>
 	</div>
 	<section class="results">
 		<div class="results-container">
-			<div class="results__find">
+			<div class="results__find disabled">
 				<h3 class="results__title">Результаты поиска</h3>
-				<div class="results__cards">
-					<div class="results__card">
-						<div class="results__image">
-							<p class="results__notice disabled">Войдите, чтобы сохранять ститьи</p>
-							<button class="results__collection"></button>
-						</div>
-						<div class="results__description">
-							<p class="results__data">2 августа, 2019</p>
-							<h3 class="results__article-name">Национальное достояние – парки</h3>
-							<p class="results__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-							<p class="results__author">Лента.ру</p>
-						</div>
-					</div>
-					<div class="results__card">
-						<div class="results__image">
-							<p class="results__notice disabled">Войдите, чтобы сохранять статьи</p>
-							<button class="results__collection"></button>
-						</div>
-						<div class="results__description">
-							<p class="results__data">2 августа, 2019</p>
-							<h3 class="results__article-name">Национальное достояние – парки</h3>
-							<p class="results__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-							<p class="results__author">Лента.ру</p>
-						</div>
-					</div>
-					<div class="results__card">
-						<div class="results__image">
-							<p class="results__notice">Войдите, чтобы сохранять ститьи</p>
-							<button class="results__collection results__collection_add"></button>
-						</div>
-						<div class="results__description">
-							<p class="results__data">2 августа, 2019</p>
-							<h3 class="results__article-name">Национальное достояние – парки</h3>
-							<p class="results__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-							<p class="results__author">Лента.ру</p>
-						</div>
-					</div>
+				<div class="results__cards disabled">
 				</div>
 				<button class="results__button">Показать еще</button>
 			</div>
-			<div class="preloader">
+			<div class="preloader disabled">
 	            <div class="preloader__animation"></div>
 	            <p class="preloader__text">Идет поиск новостей...</p>
 			</div>
-			<div class="notfound">
+			<div class="notfound disabled">
 				<img src="<%=require('./images/results__notfind_image.png')%>" alt="NotFind" class="notfound__image">
 				<p class="notfound__title">Ничего не найдено</p>
 	            <p class="notfound__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
@@ -103,93 +69,42 @@
 			</div>
 		</div>
 	</footer>
-	<div class="popup">
+    <div class="popup disabled">
       <div class="popup__content">
         <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
         <h3 class="popup__title">Вход</h3>
-        <form class="popup__form input-container__invalid" name="new">
+        <form class="popup__form" name="signin">
         	<h4 class="popup__subtitle">Email</h4>
-            <input type="text" name="email" class="popup__input" placeholder="fdgdfgdf">
-            <h4 class="popup__subtitle error-message">Неправильный формат email</h4>
-			<h4 class="popup__subtitle">Пароль</h4>
-            <input type="text" name="password" class="popup__input" placeholder="123">
-            <h4 class="popup__subtitle error-message">Неправильный пароль</h4>
-            <button type="submit" class="button popup__button">Войти</button>
-            <h4 class="popup__footer">или <button class="popup__footer_signin popup__footer_blue">Зарегистироваться</button></h4>
-        </form>
-      </div>
-    </div>
-    <div class="popup">
-      <div class="popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
-        <h3 class="popup__title">Вход</h3>
-        <form class="popup__form" name="new">
-        	<h4 class="popup__subtitle">Email</h4>
-            <input type="text" name="email" class="popup__input" placeholder="Введите почту">
-            <h4 class="popup__subtitle error-message">Неправильный формат email</h4>
-			<h4 class="popup__subtitle">Пароль</h4>
-            <input type="text" name="password" class="popup__input" placeholder="Введите пароль">
-            <h4 class="popup__subtitle error-message">Неправильный пароль</h4>
-            <button type="submit" class="button popup__button">Войти</button>
-            <h4 class="popup__footer">или <button class="popup__footer_signin popup__footer_blue">Зарегистироваться</button></h4>
-        </form>
-      </div>
-    </div>
-    <div class="popup">
-      <div class="popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
-        <h3 class="popup__title">Вход</h3>
-        <form class="popup__form" name="new">
-        	<h4 class="popup__subtitle">Email</h4>
-            <input type="text" name="email" class="popup__input" placeholder="ekb.mik@gmail.com">
-            <h4 class="popup__subtitle error-message">Неправильный формат email</h4>
-			<h4 class="popup__subtitle">Пароль</h4>
-            <input type="text" name="password" class="popup__input" placeholder="123qwerty">
-            <h4 class="popup__subtitle error-message">Неправильный пароль</h4>
+            <input type="email" required name="email" pattern = "^(([A-z0-9?.])+(-[A-z0-9])?)+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,}$" class="popup__input" placeholder="Введите e-mail">
+            <span class="popup__subtitle error-message" id="error-email"></span>
+			      <h4 class="popup__subtitle">Пароль</h4>
+            <input type="password" minlength="8" required name="password" class="popup__input popup__input_password" placeholder="Введите пароль">
+            <span class="popup__subtitle error-message"></span>
             <button type="submit" class="button popup__button popup__button_active">Войти</button>
             <h4 class="popup__footer">или <button class="popup__footer_signin popup__footer_blue">Зарегистироваться</button></h4>
         </form>
       </div>
 	</div>
-    <div class="popup">
+    <div class="popup disabled" id ="popupRegistration">
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">button
+        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close" id="regClose">
         <h3 class="popup__title">Регистрация</h3>
-        <form class="popup__form" name="new">
+        <form class="popup__form input-container__invalid" name="reg">
         	<h4 class="popup__subtitle">Email</h4>
-            <input type="text" name="email" class="popup__input" placeholder="Введите почту">
-            <h4 class="popup__subtitle error-message">Неправильный формат email</h4>
-			<h4 class="popup__subtitle">Пароль</h4>
-            <input type="text" name="password" class="popup__input" placeholder="Введите пароль">
-            <h4 class="popup__subtitle error-message">Неподходящий пароль</h4>
+            <input type="email" name="email" required pattern = "^(([A-z0-9?.])+(-[A-z0-9])?)+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,}$" class="popup__input popup__input_email" placeholder="Введите e-mail">
+			      <h4 class="popup__subtitle">Пароль</h4>
+            <input type="password" required minlength ="8" name="password" class="popup__input popup__input_password" placeholder="Введите пароль">
             <h4 class="popup__subtitle">Имя</h4>
-            <input type="text" name="name" class="popup__input" placeholder="Введите своё имя">
-            <h4 class="popup__subtitle error-message error__user-have">Такой пользователь уже есть</h4>
-            <button type="submit" class="button popup__button">Зарегистрироваться</button>
-            <h4 class="popup__footer">или <button class="popup__footer_signin popup__footer_blue">Войти</button></h4>
+            <input type="text" name="name" required class="popup__input popup__input_name" placeholder="Введите Имя">
+            <h4 class="popup__subtitle error-message error__user-have disabled">Такой пользователь уже есть</h4>
+            <button type="submit" class="button popup__button popup__button_active" id="button-reg">Зарегистрироваться</button>
+            <h4 class="popup__footer">или <button class="popup__footer_signin popup__footer_blue" id="signin">Войти</button></h4>
         </form>
       </div>
     </div>
-    <div class="popup">
+    <div class="popup disabled">
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
-        <h3 class="popup__title">Регистрация</h3>
-        <form class="popup__form input-container__invalid" name="new">
-        	<h4 class="popup__subtitle">Email</h4>
-            <input type="text" name="email" class="popup__input" placeholder="ekb.mik@gmail.com">
-			<h4 class="popup__subtitle">Пароль</h4>
-            <input type="text" name="password" class="popup__input" placeholder="123qwerty">
-            <h4 class="popup__subtitle">Имя</h4>
-            <input type="text" name="name" class="popup__input" placeholder="Mikhail">
-            <h4 class="popup__subtitle error-message error__user-have">Такой пользователь уже есть</h4>
-            <button type="submit" class="button popup__button popup__button_active">Зарегистрироваться</button>
-            <h4 class="popup__footer">или <button class="popup__footer_signin popup__footer_blue">Войти</button></h4>
-        </form>
-      </div>
-    </div>
-    <div class="popup">
-      <div class="popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close" id = "regClose">
         <h3 class="popup__title">Пользаватель успешно зарегистирован!</h3>
         <form class="popup__form" name="new">
             <button class="popup__footer_signin">Выполнить вход</button>

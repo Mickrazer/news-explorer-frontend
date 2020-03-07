@@ -21,6 +21,11 @@
 	background: none;
 }
 
+.popup__footer_signin:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 .popup__footer_blue {
 	font-size: 14px;
 	line-height: 17px;

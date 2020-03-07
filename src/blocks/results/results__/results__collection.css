@@ -21,6 +21,7 @@
 
 .results__collection_add {
 	background: url(../../../images/collection__add.svg);
+  z-index: 1;
 }
 
 @media (min-width: 600px) and (max-width: 1279px) {

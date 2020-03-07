@@ -17,9 +17,6 @@
   .border {
 		padding: 8px 15px 8px 15px;
 	}
-  .border_black {
-    padding: 8px 15px 8px 15px;
-  }
 }
 
 @media (max-width:600px) {

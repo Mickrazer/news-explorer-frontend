@@ -14,16 +14,16 @@
 			<h1 class="header__logo black" >NewsExplorer</h1>
 			<button class="header__burger-button header__burger-button_black"></button>
 			<div class="header__menu">
-				<a href="#" class='header__info black'>Главная</a>
+				<a href="/" class='header__info black'>Главная</a>
 				<a href="#" class="header__info header__active_black black">Сохраненные статьи</a>
-				<button class='header__info border_black black'>Грета
+				<button class='header__info border_black black'>
 					<img src="../<%=require('../../images/logout.png')%>" alt="logout" class="header__logout">
 				</button>
 			</div>
 		</header>
 		<div class="articles">
 			<p class="articles__save">Сохранённые статьи</p>
-			<h2 class="articles__title">Грета, у вас 5 сохранённых статей</h2>
+			<h2 class="articles__title"><span class="articles__user"></span>, <span class="articles__text"></span></h2>
 			<h3 class="articles__subtitle">По ключевым словам: <span class="text__bold"> Природа, Тайга и 2 другим</span></h3>
 		</div>
 	</div>
@@ -31,73 +31,7 @@
 		<div class="results-container">
 			<div class="results__find">
 				<h3 class="results__title disabled">Результаты поиска</h3>
-				<div class="results__cards">
-					<div class="results__card">
-						<div class="results__image">
-							<p class="results__notice results__class">Природа</p>
-							<p class="results__notice disabled">Убрать из сохранённых</p>
-							<button class="results__collection results__collection_delete"></button>
-						</div>
-						<div class="results__description">
-							<p class="results__data">2 августа, 2019</p>
-							<h3 class="results__article-name">Национальное достояние – парки</h3>
-							<p class="results__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-							<p class="results__author">Лента.ру</p>
-						</div>
-					</div>
-					<div class="results__card">
-						<div class="results__image">
-							<p class="results__notice results__class">Природа</p>
-							<p class="results__notice disabled">Убрать из сохранённых</p>
-							<button class="results__collection results__collection_delete"></button>
-						</div>
-						<div class="results__description">
-							<p class="results__data">2 августа, 2019</p>
-							<h3 class="results__article-name">Национальное достояние – парки</h3>
-							<p class="results__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-							<p class="results__author">Лента.ру</p>
-						</div>
-					</div>
-					<div class="results__card">
-						<div class="results__image">
-							<p class="results__notice results__class">Природа</p>
-							<p class="results__notice disabled">Убрать из сохранённых</p>
-							<button class="results__collection results__collection_delete"></button>
-						</div>
-						<div class="results__description">
-							<p class="results__data">2 августа, 2019</p>
-							<h3 class="results__article-name">Национальное достояние – парки</h3>
-							<p class="results__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-							<p class="results__author">Лента.ру</p>
-						</div>
-					</div>
-					<div class="results__card">
-						<div class="results__image">
-							<p class="results__notice results__class">Природа</p>
-							<p class="results__notice disabled">Убрать из сохранённых</p>
-							<button class="results__collection results__collection_delete"></button>
-						</div>
-						<div class="results__description">
-							<p class="results__data">2 августа, 2019</p>
-							<h3 class="results__article-name">Национальное достояние – парки</h3>
-							<p class="results__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-							<p class="results__author">Лента.ру</p>
-						</div>
-					</div>
-					<div class="results__card">
-						<div class="results__image">
-							<p class="results__notice results__class">Природа</p>
-							<p class="results__notice disabled">Убрать из сохранённых</p>
-							<button class="results__collection results__collection_delete"></button>
-						</div>
-						<div class="results__description">
-							<p class="results__data">2 августа, 2019</p>
-							<h3 class="results__article-name">Национальное достояние – парки</h3>
-							<p class="results__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-							<p class="results__author">Лента.ру</p>
-						</div>
-					</div>
-				</div>
+				<div class="results__cards" id="save-articles"></div>
 			</div>
 		</div>
 	</section>
@@ -114,6 +48,6 @@
 			</div>
 		</div>
 	</footer>
-	<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+	<script src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>
 </body>
 </html>
