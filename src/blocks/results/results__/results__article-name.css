@@ -12,6 +12,8 @@
 @media (min-width: 600px) and (max-width: 1279px) {
   	.results__article-name {
 		max-width: 192px;
+    max-height: 50px;
+    overflow: auto;
 		font-size: 22px;
 		line-height: 24px;
  	}
@@ -19,6 +21,8 @@
 
 @media (max-width:600px) {
   	.results__article-name {
+    max-height: 55px;
+    overflow: auto;
 		max-width: 256px;
 		font-size: 22px;
 		line-height: 28px;

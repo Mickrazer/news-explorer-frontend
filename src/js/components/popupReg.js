@@ -1,5 +1,6 @@
 import Popup from './popup';
 import MainApi from '../api/mainApi';
+import errorHandler from '../utils/errorHandler'
 
 const mainApi = new MainApi('https://mestoekbmik.site');
 
@@ -44,6 +45,9 @@ export default class PopupReg extends Popup {
     e.preventDefault();
     mainApi.userCreate(formRegName.value, formRegEmail.value, formRegPas.value).then((res)=> {
       popupReg.classList.add('disabled');
+    })
+    .catch((err) => {
+      errorHandler(err);
     })
     formRegName.value = ''
     formRegEmail.value = '';

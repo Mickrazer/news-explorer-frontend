@@ -5,6 +5,7 @@ import Favorites from './components/favorites';
 import SaveArticlesResults from './components/saveArticlesResults';
 import newsApiToken from './constants/newsApiToken';
 import mainApiAdress from './constants/mainApiAdress';
+import errorHandler from './utils/errorHandler';
 import {
   headerSaveArticles,
   articlesText,
@@ -36,6 +37,9 @@ function renderSaveArticles() {
     favorites.render(articlesArray);
     saveArticlesResults.render(articlesArray)
   })
+  .catch((err) => {
+    errorHandler(err);
+  })
 }
 
 mainApi.getUser().then((res) => {
@@ -47,5 +51,6 @@ mainApi.getUser().then((res) => {
   renderSaveArticles()
 })
   .catch((err) => {
+    errorHandler(err);
     headerLogoutButton.classList.add('disabled');
   })

@@ -13,7 +13,7 @@ export default class SaveArticlesResults {
   render(articlesArray) {
     this.clearResults();
     articlesArray.forEach((item) => {
-      this.resultsContainer.appendChild(item.articleElement);
+    this.resultsContainer.appendChild(item.articleElement);
     })
   }
 }

@@ -1,8 +1,8 @@
 import Popup from './popup';
 import MainApi from '../api/mainApi';
+import errorHandler from '../utils/errorHandler';
 
 const mainApi = new MainApi('https://mestoekbmik.site');
-
 
 import {
   popupClose,
@@ -49,10 +49,16 @@ export default class PopupIn extends Popup {
         logoutButton.classList.add('header__logout-white');
         headerButton.appendChild(logoutButton);
       })
+      .catch((err) => {
+        errorHandler(err);
+      });
       saveArticles.classList.remove('disabled');
       popup.classList.add('disabled');
       document.location.reload(true);
     })
+    .catch((err) => {
+      errorHandler(err);
+    });
     inputEmail.value = '';
     inputPas.value = '';
   }

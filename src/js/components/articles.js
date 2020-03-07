@@ -1,3 +1,5 @@
+import errorHandler from '../utils/errorHandler';
+
 export default class Articles {
   constructor(mainApi, item, keyword, isLoggin) {
     this.mainApi = mainApi;
@@ -135,6 +137,7 @@ export default class Articles {
         this.resultNotice.textContent = 'Статья сохранена!'
         this.id = res.id;
       })
+      .catch((err) => errorHandler(err));
     }.bind(this);
     const del = function () {
       this.mainApi.deleteArticle(this.id)
@@ -143,6 +146,7 @@ export default class Articles {
         this.resultNotice.classList.remove('disabled');
         this.resultNotice.textContent = 'Статья удалена!'
       })
+      .catch((err) => errorHandler(err));
     }.bind(this);
 
     const notLoggin = function () {

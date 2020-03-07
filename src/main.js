@@ -7,6 +7,8 @@ import NewsApi from './js/api/newsApi';
 import SearchResults from './js/components/searchResults';
 import newsApiToken from './js/constants/newsApiToken';
 import mainApiAdress from './js/constants/mainApiAdress';
+import errorHandler from './js/utils/errorHandler';
+
 
 import {
   burgerButton,
@@ -63,6 +65,7 @@ mainApi.getUser().then((res) => {
   isLoggin = true;
 })
   .catch((err) => {
+    let error = err.then((item) => console.log(item.error));
     headerLogoutButton.classList.add('disabled');
     isLoggin = false;
   })
@@ -74,10 +77,7 @@ function search(event) {
   const keyword = searchInput.value;
   const pageSize = 20;
   preloader.classList.remove('disabled');
-  newsApi.getNews(pageSize, keyword).then((res) => {
-    return res.json();
-  })
-  .then((res)=> {
+  newsApi.getNews(pageSize, keyword).then((res)=> {
     let articlesArray = res.articles.map((item) => new Articles(mainApi, item, keyword, isLoggin));
     if (res.articles.length === 0) {
       searchResults.showError();
@@ -85,6 +85,9 @@ function search(event) {
       searchResults.addArticle(articlesArray);
     }
     showMoreButton.removeAttribute('disabled');
+  })
+  .catch((err) => {
+    errorHandler(err);
   })
 }
 searchForm.addEventListener('submit',  search);
