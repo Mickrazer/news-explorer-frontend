@@ -1,2 +1,2 @@
 import "../style.css"
-import "../../js/secondary.js";
+//import "../../js/secondary.js";
