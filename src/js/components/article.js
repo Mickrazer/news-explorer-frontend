@@ -1,6 +1,6 @@
 import errorHandler from '../utils/errorHandler';
 
-export default class Articles {
+export default class Article {
   constructor(mainApi, item, keyword, isLoggin) {
     this.mainApi = mainApi;
     this.keyword = keyword || item.keyword;
@@ -29,66 +29,66 @@ export default class Articles {
   }
   createDomElement() {
 
-    let resultCard = document.createElement('div');
+    const resultCard = document.createElement('div');
     resultCard.classList.add('results__card');
 
-    let resultImage = document.createElement('div');
+    const resultImage = document.createElement('div');
     resultImage.classList.add('results__image');
     resultImage.style.backgroundImage = `url(${this.image})`;
 
-    let resultNotice = document.createElement('p');
+    const resultNotice = document.createElement('p');
     resultNotice.classList.add('results__notice');
     resultNotice.classList.add('disabled');
 
-    let resultKeyword = document.createElement('p');
+    const resultKeyword = document.createElement('p');
     resultKeyword.classList.add('results__notice');
     resultKeyword.classList.add('results__class');
     resultKeyword.classList.add('disabled');
     resultKeyword.textContent = this.keyword;
 
-    let addToCollectionButton = document.createElement('button');
+    const addToCollectionButton = document.createElement('button');
     addToCollectionButton.classList.add('results__collection');
     addToCollectionButton.classList.add('disabled');
 
-    let deleteFromCollectionButton = document.createElement('button');
+    const deleteFromCollectionButton = document.createElement('button');
     deleteFromCollectionButton.classList.add('results__collection');
     deleteFromCollectionButton.classList.add('results__collection_delete');
     deleteFromCollectionButton.classList.add('disabled');
 
-    let resultDescription = document.createElement('div');
+    const resultDescription = document.createElement('div');
     resultDescription.classList.add('results__description');
 
-    let resultTitle = document.createElement('h3');
+    const resultTitle = document.createElement('h3');
     resultTitle.classList.add('results__article-name');
     resultTitle.textContent = this.title;
     if (resultTitle.textContent.length>30){
-      let resultTitleRestriction = resultTitle.textContent.slice(0,40);
+      const resultTitleRestriction = resultTitle.textContent.slice(0,40);
       resultTitle.textContent = resultTitleRestriction + '...';
     }
 
-    let resultSubtitle = document.createElement('p');
+    const resultSubtitle = document.createElement('p');
     resultSubtitle.classList.add('results__text');
     resultSubtitle.textContent = this.description;
     if (resultSubtitle.textContent.length>100 && resultTitle.textContent.length<40){
-      let resultSubtitleRestriction = resultSubtitle.textContent.slice(0,190);
+      const resultSubtitleRestriction = resultSubtitle.textContent.slice(0,190);
       resultSubtitle.textContent = resultSubtitleRestriction + '...';
     }
     else if (resultTitle.textContent.length>40) {
-      let resultSubtitleRestriction = resultSubtitle.textContent.slice(0,100);
+      const resultSubtitleRestriction = resultSubtitle.textContent.slice(0,100);
       resultSubtitle.textContent = resultSubtitleRestriction + '...';
     }
 
-    let resultData = document.createElement('p');
+    const resultData = document.createElement('p');
     resultData.classList.add('results__data')
     let modifiedDate = new Date(this.date);
-    let options = {
+    const options = {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
     }
     resultData.textContent = modifiedDate.toLocaleString("ru", options);
 
-    let resultAuthor = document.createElement('p');
+    const resultAuthor = document.createElement('p');
     resultAuthor.classList.add('results__author')
     resultAuthor.textContent = this.source;
 
@@ -136,8 +136,11 @@ export default class Articles {
         this.resultNotice.classList.remove('disabled');
         this.resultNotice.textContent = 'Статья сохранена!'
         this.id = res.id;
+        this.addToCollectionButton.setAttribute('disabled', true);
       })
-      .catch((err) => errorHandler(err));
+      .catch((err) => {
+        errorHandler(err);
+      });
     }.bind(this);
     const del = function () {
       this.mainApi.deleteArticle(this.id)

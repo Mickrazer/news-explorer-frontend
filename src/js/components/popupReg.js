@@ -45,12 +45,12 @@ export default class PopupReg extends Popup {
     e.preventDefault();
     mainApi.userCreate(formRegName.value, formRegEmail.value, formRegPas.value).then((res)=> {
       popupReg.classList.add('disabled');
+      formRegName.value = ''
+      formRegEmail.value = '';
+      formRegPas.value = '';
     })
     .catch((err) => {
       errorHandler(err);
     })
-    formRegName.value = ''
-    formRegEmail.value = '';
-    formRegPas.value = '';
   }
 }

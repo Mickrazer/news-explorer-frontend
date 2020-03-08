@@ -45,7 +45,7 @@ export default class PopupIn extends Popup {
     mainApi.userLogin(inputEmail.value, inputPas.value).then((res)=> {
       mainApi.getUser().then((res)=> {
         headerButton.textContent=res.name.name;
-        let logoutButton = document.createElement('button');
+        const logoutButton = document.createElement('button');
         logoutButton.classList.add('header__logout-white');
         headerButton.appendChild(logoutButton);
       })
@@ -55,11 +55,11 @@ export default class PopupIn extends Popup {
       saveArticles.classList.remove('disabled');
       popup.classList.add('disabled');
       document.location.reload(true);
+      inputEmail.value = '';
+      inputPas.value = '';
     })
     .catch((err) => {
       errorHandler(err);
     });
-    inputEmail.value = '';
-    inputPas.value = '';
   }
 }

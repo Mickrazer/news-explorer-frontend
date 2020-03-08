@@ -1,5 +1,5 @@
 import MainApi from './api/mainApi';
-import Articles from './components/articles';
+import Article from './components/article';
 import NewsApi from './api/newsApi';
 import Favorites from './components/favorites';
 import SaveArticlesResults from './components/saveArticlesResults';
@@ -21,7 +21,7 @@ let isLoggin;
 
 function renderSaveArticles() {
   mainApi.getUserArticles().then((res) => {
-    const articlesArray = res.map((item) => new Articles(
+    const articlesArray = res.map((item) => new Article(
       mainApi,
       item,
       isLoggin
@@ -45,7 +45,7 @@ function renderSaveArticles() {
 mainApi.getUser().then((res) => {
   headerSaveArticles.textContent=res.name.name;
   articlesUser.textContent = `${res.name.name}`;
-  let logoutButton = document.createElement('button');
+  const logoutButton = document.createElement('button');
   logoutButton.classList.add('header__logout');
   headerSaveArticles.appendChild(logoutButton);
   renderSaveArticles()

@@ -29,12 +29,14 @@ export default class SearchResults {
     this.preloader.classList.add('disabled');
     this.resultsError.classList.add('disabled');
     for (let i = 0; i<3; i++){
+    showMoreButton.classList.remove('disabled');
       if(this.articlesArray.length > 0) {
         this.resultsContainer.appendChild(this.articlesArray[0].articleElement);
         this.articlesArray.shift();
-      } else {
-        this.showError();
       }
+    }
+    if(this.articlesArray.length === 0){
+        showMoreButton.classList.add('disabled');
     }
   }
   showError() {

@@ -1,5 +1,5 @@
 import MainApi from './js/api/mainApi';
-import Articles from './js/components/articles';
+import Article from './js/components/article';
 import PopupIn from './js/components/popupIn';
 import PopupReg from './js/components/popupReg';
 import PopupCard from './js/components/popupCard';
@@ -51,13 +51,16 @@ function logout() {
       headerLogoutButton.classList.add('disabled');
       isLoggin = false;
     })
+    .catch((err) => {
+      errorHandler(err);
+    })
   }
 headerLogoutButton.addEventListener('click', logout);
 
 //Проверка залогинен ли пользователь
 mainApi.getUser().then((res) => {
   headerLogoutButton.textContent=res.name.name;
-  let logoutButton = document.createElement('button');
+  const logoutButton = document.createElement('button');
   logoutButton.classList.add('header__logout-white');
   headerLogoutButton.appendChild(logoutButton);
   saveArticles.classList.remove('disabled');
@@ -65,7 +68,7 @@ mainApi.getUser().then((res) => {
   isLoggin = true;
 })
   .catch((err) => {
-    let error = err.then((item) => console.log(item.error));
+    errorHandler(err);
     headerLogoutButton.classList.add('disabled');
     isLoggin = false;
   })
@@ -78,7 +81,7 @@ function search(event) {
   const pageSize = 20;
   preloader.classList.remove('disabled');
   newsApi.getNews(pageSize, keyword).then((res)=> {
-    let articlesArray = res.articles.map((item) => new Articles(mainApi, item, keyword, isLoggin));
+    const articlesArray = res.articles.map((item) => new Article(mainApi, item, keyword, isLoggin));
     if (res.articles.length === 0) {
       searchResults.showError();
     } else {

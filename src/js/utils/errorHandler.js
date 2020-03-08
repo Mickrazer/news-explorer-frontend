@@ -3,7 +3,7 @@ export default async function errorHandler(err) {
   if (err.message) {
     error = err.then((parsedErr) => parsedErr.message);
   } else {
-    error = await err.then((parsedErr) => `Ошибка ${parsedErr.message}`);
+    error = await err.then((parsedErr) => `Ошибка: ${parsedErr.error}`);
   }
   console.log(error);
 }
