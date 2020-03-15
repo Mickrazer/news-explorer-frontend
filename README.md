@@ -12,6 +12,11 @@
 
 **4. https://www.mestoekbmik.site**
 
+**Тестовый пользователь:**
+
+email: ekb.mik@gmail.com
+pas: fgh126666;
+
 Страница после сборки:
 
 **1. https://mickrazer.github.io/news-explorer-frontend/**
