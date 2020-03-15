@@ -5,8 +5,11 @@
 Страница на домене:
 
 **1. http://mestoekbmik.site**
+
 **2. https://mestoekbmik.site**
+
 **3. http://www.mestoekbmik.site**
+
 **4. https://www.mestoekbmik.site**
 
 Страница после сборки:
@@ -26,7 +29,7 @@
 
 Страница API:
 
-**api.mestoekbmik.site***
+**api.mestoekbmik.site**
 
 ## Сборка Build:
 
