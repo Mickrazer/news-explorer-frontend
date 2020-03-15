@@ -14,10 +14,15 @@
 			<h1 class="header__logo black" >NewsExplorer</h1>
 			<button class="header__burger-button header__burger-button_black"></button>
 			<div class="header__menu">
-				<a href="/news-explorer-frontend" class='header__info black'>Главная</a>
-				<a href="#" class="header__info header__active_black black">Сохраненные статьи</a>
+        <ul class="nav">
+  				<li class="header__list"><a href="/" class='header__info black'>Главная</a></li>
+  				<li class="header__list"><a href="#" class="header__info header__active_black black">Сохраненные статьи</a></li>
+        </ul>
 				<button class='header__info border_black black'>
-					<img src="../<%=require('../../images/logout.png')%>" alt="logout" class="header__logout">
+          <picture>
+            <source srcset="../<%=require('../../images/logout.png')%>">
+					  <img src="../<%=require('../../images/logout.png')%>" alt="logout" class="header__logout">
+          </picture>
 				</button>
 			</div>
 		</header>
@@ -38,14 +43,26 @@
 	<footer class="footer">
 		<h4 class="footer__year">&#169; 2020 Supersite, Powered by News API</h4>
 		<div class="footer__info">
-			<div class="footer__links">
-				<a class="footer__link" href="/">Главная</a>
-				<a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
-			</div>
-			<div class="footer__social">
-				<img src="../<%=require('../../images/git.svg')%>" alt="github" class="footer__icon">
-				<img src="../<%=require('../../images/facebook.svg')%>" alt="facebook" class="footer__icon">
-			</div>
+			<nav class="footer__links">
+        <ul class="nav nav__footer">
+  				<li><a class="footer__link" href="/">Главная</a></li>
+  				<li><a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+        </ul>
+			</nav>
+      <div class="footer__social">
+        <a href="https://github.com" class="footer__icon">
+          <picture>
+            <source srcset="../<%=require('../../images/git.svg')%>">
+            <img src="../<%=require('../../images/git.svg')%>" alt="github">
+          </picture>
+        </a>
+        <a href="https://facebook.com" class="footer__icon">
+          <picture>
+            <source srcset="../<%=require('../../images/facebook.svg')%>">
+            <img src="../<%=require('../../images/facebook.svg')%>" alt="facebook">
+          </picture>
+        </a>
+      </div>
 		</div>
 	</footer>
 	<script src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>

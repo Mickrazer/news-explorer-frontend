@@ -23,6 +23,7 @@ import {
   saveArticles,
   showMoreButton,
   searchForm,
+  searchButton,
   preloader
 } from './js/constants/constants';
 
@@ -76,6 +77,8 @@ mainApi.getUser().then((res) => {
 //работа кнопки Искать
 function search(event) {
   event.preventDefault();
+  searchInput.setAttribute('disabled', true);
+  searchButton.setAttribute('disabled', true);
   searchResults.renderResults();
   const keyword = searchInput.value;
   const pageSize = 20;
@@ -88,9 +91,13 @@ function search(event) {
       searchResults.addArticle(articlesArray);
     }
     showMoreButton.removeAttribute('disabled');
+    searchInput.removeAttribute('disabled');
+    searchButton.removeAttribute('disabled');
   })
   .catch((err) => {
     errorHandler(err);
+    searchInput.removeAttribute('disabled');
+    searchButton.removeAttribute('disabled');
   })
 }
 searchForm.addEventListener('submit',  search);

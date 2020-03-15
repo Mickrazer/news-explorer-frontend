@@ -14,8 +14,10 @@
 			<h1 class="header__logo" >NewsExplorer</h1>
 			<button class="header__burger-button"></button>
 			<div class="header__menu">
-				<a href="../" class='header__info header__active'>Главная</a>
-        <a href="/news-explorer-frontend/secondary" class="header__info disabled" id = "saveArticles">Сохраненные статьи</a>
+        <ul class="nav">
+  				<li class="header__list"><a href="../" class="header__info header__active">Главная</a></li>
+          <li class="header__list"><a href="/secondary" class="header__info disabled" id = "saveArticles">Сохраненные статьи</a></li>
+        </ul>
 				<button class='header__info border'>Авторизоваться</button>
         <button class='header__info border' id="logoutButton"></button>
 			</div>
@@ -38,13 +40,16 @@
 				<button class="results__button">Показать еще</button>
 			</div>
 			<div class="preloader disabled">
-	            <div class="preloader__animation"></div>
-	            <p class="preloader__text">Идет поиск новостей...</p>
+	      <div class="preloader__animation"></div>
+	      <p class="preloader__text">Идет поиск новостей...</p>
 			</div>
 			<div class="notfound disabled">
-				<img src="<%=require('./images/results__notfind_image.png')%>" alt="NotFind" class="notfound__image">
+        <picture>
+          <source srcset="<%=require('./images/results__notfind_image.png')%>">
+				  <img src="<%=require('./images/results__notfind_image.png')%>" alt="NotFind" class="notfound__image">
+        </picture>
 				<p class="notfound__title">Ничего не найдено</p>
-	            <p class="notfound__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
+	      <p class="notfound__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
 			</div>
 		</div>
 	</section>
@@ -59,13 +64,25 @@
 	<footer class="footer">
 		<h4 class="footer__year">&#169; 2020 Supersite, Powered by News API</h4>
 		<div class="footer__info">
-			<div class="footer__links">
-				<a class="footer__link" href="../">Главная</a>
-				<a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
-			</div>
+			<nav class="footer__links">
+        <ul class="nav nav__footer">
+  				<li><a class="footer__link" href="../">Главная</a></li>
+  				<li><a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+        </ul>
+			</nav>
 			<div class="footer__social">
-				<a href="https://github.com" class="footer__icon"><img src="<%=require('./images/git.svg')%>" alt="github"></a>
-				<a href="https://facebook.com" class="footer__icon"><img src="<%=require('./images/facebook.svg')%>" alt="facebook"></a>
+				<a href="https://github.com" class="footer__icon">
+          <picture>
+            <source srcset="<%=require('./images/git.svg')%>">
+            <img src="<%=require('./images/git.svg')%>" alt="github">
+          </picture>
+        </a>
+				<a href="https://facebook.com" class="footer__icon">
+          <picture>
+            <source srcset="<%=require('./images/facebook.svg')%>">
+            <img src="<%=require('./images/facebook.svg')%>" alt="facebook">
+          </picture>
+        </a>
 			</div>
 		</div>
 	</footer>
@@ -76,7 +93,7 @@
         <form class="popup__form" name="signin">
         	<h4 class="popup__subtitle">Email</h4>
             <input type="email" required name="email" pattern = "^(([A-z0-9?.])+(-[A-z0-9])?)+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,}$" class="popup__input" placeholder="Введите e-mail">
-            <span class="popup__subtitle error-message" id="error-email"></span>
+            <span class="popup__subtitle error-message" id="error-email">Неправильный е-mail или пароль</span>
 			      <h4 class="popup__subtitle">Пароль</h4>
             <input type="password" minlength="8" required name="password" class="popup__input popup__input_password" placeholder="Введите пароль">
             <span class="popup__subtitle error-message"></span>
@@ -89,14 +106,14 @@
       <div class="popup__content">
         <img src="<%=require('./images/close.svg')%>" alt="close_popup" class="popup__close" id="regClose">
         <h3 class="popup__title">Регистрация</h3>
-        <form class="popup__form input-container__invalid" name="reg">
+        <form class="popup__form" name="reg">
         	<h4 class="popup__subtitle">Email</h4>
             <input type="email" name="email" required pattern = "^(([A-z0-9?.])+(-[A-z0-9])?)+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,}$" class="popup__input popup__input_email" placeholder="Введите e-mail">
 			      <h4 class="popup__subtitle">Пароль</h4>
             <input type="password" required minlength ="8" name="password" class="popup__input popup__input_password" placeholder="Введите пароль">
             <h4 class="popup__subtitle">Имя</h4>
             <input type="text" name="name" required class="popup__input popup__input_name" placeholder="Введите Имя">
-            <h4 class="popup__subtitle error-message error__user-have disabled">Такой пользователь уже есть</h4>
+            <h4 class="popup__subtitle error-message error__user-have">Такой пользователь уже есть</h4>
             <button type="submit" class="button popup__button popup__button_active" id="button-reg">Зарегистрироваться</button>
             <h4 class="popup__footer">или <button class="popup__footer_signin popup__footer_blue" id="signin">Войти</button></h4>
         </form>

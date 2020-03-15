@@ -2,7 +2,7 @@ import Popup from './popup';
 import MainApi from '../api/mainApi';
 import errorHandler from '../utils/errorHandler'
 
-const mainApi = new MainApi('https://mestoekbmik.site');
+const mainApi = new MainApi('https://api.mestoekbmik.site');
 
 import {
   popupClose,
@@ -26,7 +26,7 @@ export default class PopupReg extends Popup {
     this.form = formReg;
     this.button.addEventListener('click', this.open);
     regClose.addEventListener('click', this.close);
-    this.form.addEventListener('submit', this.registaration);
+    this.form.addEventListener('submit', this._registaration);
     this.headerLogoutButton = headerLogoutButton;
     this.form.addEventListener('input', function() {
       if(formReg.checkValidity()){
@@ -41,16 +41,30 @@ export default class PopupReg extends Popup {
     popup.classList.add('disabled');
     this.popupElement.classList.remove('disabled');
   }
-  registaration(e) {
+  _registaration(e) {
     e.preventDefault();
+    formRegName.setAttribute('disabled', true);
+    formRegEmail.setAttribute('disabled', true);
+    formRegPas.setAttribute('disabled', true);
+    popupButton.setAttribute('disabled', true);
     mainApi.userCreate(formRegName.value, formRegEmail.value, formRegPas.value).then((res)=> {
       popupReg.classList.add('disabled');
       formRegName.value = ''
       formRegEmail.value = '';
       formRegPas.value = '';
+      formRegName.removeAttribute('disabled');
+      formRegEmail.removeAttribute('disabled');
+      formRegPas.removeAttribute('disabled');
+      popupButton.removeAttribute('disabled');
+      formReg.classList.remove('input-container__invalid');
     })
     .catch((err) => {
       errorHandler(err);
+      formReg.classList.add('input-container__invalid');
+      formRegName.removeAttribute('disabled');
+      formRegEmail.removeAttribute('disabled');
+      formRegPas.removeAttribute('disabled');
+      popupButton.removeAttribute('disabled');
     })
   }
 }

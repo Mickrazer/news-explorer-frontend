@@ -16,7 +16,7 @@
 	}
 }
 
-@media (max-width:600px) {
+@media (max-width:765px) {
   .header__info {
 		margin-left: 32px;
   }

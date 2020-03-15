@@ -15,7 +15,7 @@ export default class SearchResults {
     this.articlesArray = [];
     showMoreButton.addEventListener('click',  (event) => {
       event.preventDefault();
-      this.showResults();
+      this._showResults();
     });
   }
   renderResults() {
@@ -23,7 +23,7 @@ export default class SearchResults {
     this.preloader.classList.remove('disabled');
     this.resultsError.classList.add('disabled');
   }
-  showResults() {
+  _showResults() {
     this.resultsFind.classList.remove('disabled');
     this.resultsContainer.classList.remove('disabled');
     this.preloader.classList.add('disabled');
@@ -44,7 +44,7 @@ export default class SearchResults {
     this.resultsError.classList.remove('disabled');
   }
 
-  clearResults() {
+  _clearResults() {
     while (this.resultsContainer.firstChild) {
       this.resultsContainer.removeChild(this.resultsContainer.firstChild)
     }
@@ -52,8 +52,8 @@ export default class SearchResults {
   }
 
   addArticle(articlesArray){
-    this.clearResults();
+    this._clearResults();
     this.articlesArray = articlesArray;
-    this.showResults();
+    this._showResults();
   }
 }

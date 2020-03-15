@@ -1,2 +1,2 @@
-const mainApiAdress = 'https://mestoekbmik.site';
+const mainApiAdress = 'https://api.mestoekbmik.site';
 export default mainApiAdress;

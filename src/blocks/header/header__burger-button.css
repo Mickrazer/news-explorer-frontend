@@ -3,7 +3,7 @@
 	z-index: 2;
 }
 
-@media (max-width:600px) {
+@media (max-width:650px) {
   .header__burger-button {
   	width: 24px;
   	height: 24px;

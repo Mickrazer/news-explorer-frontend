@@ -14,20 +14,20 @@ export default class Article {
     this.id = item._id || null;
     this.searchArray =  [];
     this.getEventListener = this.getEventListener();
-    this.articleElement = this.createDomElement();
+    this.articleElement = this._createDomElement();
     this.resultNotice = this.articleElement.querySelector('.results__notice');
     this.resultKeyword = this.articleElement.querySelector('.results__class');
     this.addToCollectionButton = this.articleElement.querySelector('.results__collection');
     this.deleteFromCollectionButton = this.articleElement.querySelector('.results__collection_delete');
     this.reloadFunction = null;
     if(this.id) {
-      this.renderDeleteButton();
+      this._renderDeleteButton();
       this.resultKeyword.classList.remove('disabled');
     } else {
-      this.renderAddButton();
+      this._renderAddButton();
     }
   }
-  createDomElement() {
+  _createDomElement() {
 
     const resultCard = document.createElement('div');
     resultCard.classList.add('results__card');
@@ -106,7 +106,7 @@ export default class Article {
     return resultCard;
   }
 
-  renderAddButton() {
+  _renderAddButton() {
     this.addToCollectionButton.classList.remove('disabled');
     if(this.isLoggin) {
       this.addToCollectionButton.addEventListener('click', this.getEventListener.add);
@@ -115,7 +115,7 @@ export default class Article {
     }
   }
 
-  renderDeleteButton() {
+  _renderDeleteButton() {
     this.deleteFromCollectionButton.classList.remove('disabled');
     this.deleteFromCollectionButton.addEventListener('click', this.getEventListener.del)
 

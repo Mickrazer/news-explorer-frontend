@@ -1,6 +1,18 @@
 .header__menu {
 	display: flex;
 	align-items: center;
+  text-decoration: none;
+}
+
+.header__list{
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 0;
 }
 
 .header__logout {
@@ -28,14 +40,19 @@
 	color: #B6BCBF;
 }
 
-@media (max-width:600px) {
+@media (max-width:650px) {
   .header__menu {
   	opacity: 0;
   	position: absolute;
-  	width: 336px;
+  	width: 100vw;
   	top: 57px;
-  	left: -16px;
+  	left: 0px;
 		flex-direction: column;
 		align-items: flex-start;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
   }
 }
