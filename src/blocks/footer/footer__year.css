@@ -1,0 +1,21 @@
+.footer__year {
+	margin-left: 104px;
+	font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #B6BCBF;
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+    .footer__year {
+    	margin-left: 40px;
+    }
+}
+
+@media (max-width: 720px) {
+    .footer__year {
+    	margin-left: 0;
+    	margin-bottom: 25px;
+    }
+}

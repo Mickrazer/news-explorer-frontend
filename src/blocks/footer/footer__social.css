@@ -1,0 +1,17 @@
+.footer__social{
+	margin-right: 106px;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+    .footer__social {
+    	margin-right: 42px;
+    }
+}
+
+@media (max-width:720px) {
+    .footer__social {
+    	margin-right: 18px;
+    }
+}

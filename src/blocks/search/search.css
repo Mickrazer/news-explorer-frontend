@@ -1,0 +1,25 @@
+@import url(./search__title.css);
+@import url(./search__subtitle.css);
+@import url(./__block/search__block.css);
+
+.search {
+	max-height: 496px;
+	max-width: 608px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+@media (min-width: 1024px) and (max-width: 2440px) {
+	.search{
+		height: 496px;
+		width: 608px;
+	}
+}
+
+@media (min-width: 766px) and (max-width: 1023px) {
+  	.search {
+  		max-width: 452px;
+	}
+}

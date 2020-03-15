@@ -1,0 +1,19 @@
+.results__find {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 60%;
+	margin: 0 auto;
+}
+
+@media (max-width:1800px) {
+  .results__find {
+	width: 90vw;
+ }
+}
+
+@media (min-width: 1801px) {
+  .results__find {
+	width: 70vw;
+ }
+}
