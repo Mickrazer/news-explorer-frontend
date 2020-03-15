@@ -1,6 +1,13 @@
 # news-explorer-frontend
 
-**Версия**: 0.1
+**Версия**: 2.1
+
+Страница на домене:
+
+**1. http://mestoekbmik.site**
+**2. https://mestoekbmik.site**
+**3. http://www.mestoekbmik.site**
+**4. https://www.mestoekbmik.site**
 
 Страница после сборки:
 
@@ -10,6 +17,16 @@
 
 **Виды сборок в проекте:**
 **build**, **dev**, **deploy**.
+
+При сборке dev: 
+
+**1. localhost:8080 - главная страница**
+
+**2. localhost:8080/secondary - вторая страница**
+
+Страница API:
+
+**api.mestoekbmik.site***
 
 ## Сборка Build:
 
