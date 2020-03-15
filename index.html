@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>NewsExplorer</title>
-    <link rel="stylesheet" href="main/main.48608d842907244591ae.css">
+    <link rel="stylesheet" href="main/main.95128e69e2ad95f9090b.css">
     <link rel="icon" href="./images/newsexplorericon.png" type="image/x-icon">
 </head>
 <body>
@@ -14,8 +14,10 @@
 			<h1 class="header__logo" >NewsExplorer</h1>
 			<button class="header__burger-button"></button>
 			<div class="header__menu">
-				<a href="../" class='header__info header__active'>Главная</a>
-        <a href="/news-explorer-frontend/secondary" class="header__info disabled" id = "saveArticles">Сохраненные статьи</a>
+        <ul class="nav">
+  				<li class="header__list"><a href="../" class="header__info header__active">Главная</a></li>
+          <li class="header__list"><a href="/news-explorer-frontend/secondary" class="header__info disabled" id = "saveArticles">Сохраненные статьи</a></li>
+        </ul>
 				<button class='header__info border'>Авторизоваться</button>
         <button class='header__info border' id="logoutButton"></button>
 			</div>
@@ -38,13 +40,16 @@
 				<button class="results__button">Показать еще</button>
 			</div>
 			<div class="preloader disabled">
-	            <div class="preloader__animation"></div>
-	            <p class="preloader__text">Идет поиск новостей...</p>
+	      <div class="preloader__animation"></div>
+	      <p class="preloader__text">Идет поиск новостей...</p>
 			</div>
 			<div class="notfound disabled">
-				<img src="./images/results__notfind_image.png" alt="NotFind" class="notfound__image">
+        <picture>
+          <source srcset="./images/results__notfind_image.png">
+				  <img src="./images/results__notfind_image.png" alt="NotFind" class="notfound__image">
+        </picture>
 				<p class="notfound__title">Ничего не найдено</p>
-	            <p class="notfound__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
+	      <p class="notfound__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
 			</div>
 		</div>
 	</section>
@@ -59,13 +64,25 @@
 	<footer class="footer">
 		<h4 class="footer__year">&#169; 2020 Supersite, Powered by News API</h4>
 		<div class="footer__info">
-			<div class="footer__links">
-				<a class="footer__link" href="../">Главная</a>
-				<a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
-			</div>
+			<nav class="footer__links">
+        <ul class="nav nav__footer">
+  				<li><a class="footer__link" href="../">Главная</a></li>
+  				<li><a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+        </ul>
+			</nav>
 			<div class="footer__social">
-				<a href="https://github.com" class="footer__icon"><img src="./images/git.svg" alt="github"></a>
-				<a href="https://facebook.com" class="footer__icon"><img src="./images/facebook.svg" alt="facebook"></a>
+				<a href="https://github.com" class="footer__icon">
+          <picture>
+            <source srcset="./images/git.svg">
+            <img src="./images/git.svg" alt="github">
+          </picture>
+        </a>
+				<a href="https://facebook.com" class="footer__icon">
+          <picture>
+            <source srcset="./images/facebook.svg">
+            <img src="./images/facebook.svg" alt="facebook">
+          </picture>
+        </a>
 			</div>
 		</div>
 	</footer>
@@ -111,6 +128,6 @@
         </form>
       </div>
     </div>
-	<script src="main/main.7b2153c269130ce2adc8.js"></script>
+	<script src="main/main.09aa39219cfe45d52c72.js"></script>
 </body>
 </html>

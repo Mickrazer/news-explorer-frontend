@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>NewsExplorer</title>
-    <link rel="stylesheet" href="../main/main.48608d842907244591ae.css">
+    <link rel="stylesheet" href="../main/main.95128e69e2ad95f9090b.css">
     <link rel="icon" href="./images/newsexplorericon.png" type="image/x-icon">
 </head>
 <body>
@@ -14,10 +14,15 @@
 			<h1 class="header__logo black" >NewsExplorer</h1>
 			<button class="header__burger-button header__burger-button_black"></button>
 			<div class="header__menu">
-				<a href="/news-explorer-frontend" class='header__info black'>Главная</a>
-				<a href="#" class="header__info header__active_black black">Сохраненные статьи</a>
+        <ul class="nav">
+  				<li class="header__list"><a href="/news-explorer-frontend" class='header__info black'>Главная</a></li>
+  				<li class="header__list"><a href="#" class="header__info header__active_black black">Сохраненные статьи</a></li>
+        </ul>
 				<button class='header__info border_black black'>
-					<img src=".././images/logout.png" alt="logout" class="header__logout">
+          <picture>
+            <source srcset=".././images/logout.png">
+					  <img src=".././images/logout.png" alt="logout" class="header__logout">
+          </picture>
 				</button>
 			</div>
 		</header>
@@ -38,16 +43,28 @@
 	<footer class="footer">
 		<h4 class="footer__year">&#169; 2020 Supersite, Powered by News API</h4>
 		<div class="footer__info">
-			<div class="footer__links">
-				<a class="footer__link" href="/">Главная</a>
-				<a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
-			</div>
-			<div class="footer__social">
-				<img src=".././images/git.svg" alt="github" class="footer__icon">
-				<img src=".././images/facebook.svg" alt="facebook" class="footer__icon">
-			</div>
+			<nav class="footer__links">
+        <ul class="nav nav__footer">
+  				<li><a class="footer__link" href="/">Главная</a></li>
+  				<li><a class="footer__link footer__link_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+        </ul>
+			</nav>
+      <div class="footer__social">
+        <a href="https://github.com" class="footer__icon">
+          <picture>
+            <source srcset="./images/git.svg">
+            <img src=".././images/git.svg" alt="github">
+          </picture>
+        </a>
+        <a href="https://facebook.com" class="footer__icon">
+          <picture>
+            <source srcset="./images/facebook.svg">
+            <img src=".././images/facebook.svg" alt="facebook">
+          </picture>
+        </a>
+      </div>
 		</div>
 	</footer>
-	<script src="../secondary/secondary.b909ed56b959d1f3ea65.js"></script>
+	<script src="../secondary/secondary.acc10c5f7dc8d58a2973.js"></script>
 </body>
 </html>
