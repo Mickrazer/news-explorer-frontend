@@ -2,15 +2,7 @@
 
 **Версия**: 2.1
 
-Страницы на домене:
-
-**1. http://mestoekbmik.site**
-
-**2. https://mestoekbmik.site**
-
-**3. http://www.mestoekbmik.site**
-
-**4. https://www.mestoekbmik.site**
+(Работают не все функции, из-за отсутствия домена и облака)
 
 **Тестовый пользователь:**
 
